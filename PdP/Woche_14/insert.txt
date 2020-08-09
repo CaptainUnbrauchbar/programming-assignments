@@ -1,0 +1,19 @@
+public void insert(ListElement<T> newElem, int i) {
+  if (i == 0)
+    insert(newElem);
+  else {
+    ListElement<T> tmp = head;
+    ListElement<T> prev = null;
+    int l = 0;
+    // Aufsuchen des i-ten Elements
+    while (l < i) {
+      prev = tmp;
+      tmp = prev.next;
+      l++;
+    } // l == i ist erreicht
+    prev.next = newElem;
+    newElem.next = tmp;
+  }
+}
+
+
